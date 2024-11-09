@@ -8,6 +8,7 @@ public class UIClick : MonoBehaviour, IPointerClickHandler
     public GameObject tree_text;
     public GameObject road_text;
     int count = 0;
+    bool finish = false;
 
     // Start is called before the first frame update
     void Start()
@@ -35,7 +36,6 @@ public class UIClick : MonoBehaviour, IPointerClickHandler
         Debug.Log(clickedObject.name);
         if (clickedObject.name == "tree")
         {
-            Debug.Log("correct");
             road_text.SetActive(false);
             tree_text.SetActive(true);
             ChatManager.Instance.tree.SetActive(false);
@@ -43,12 +43,16 @@ public class UIClick : MonoBehaviour, IPointerClickHandler
         }
         else if (clickedObject.name == "road")
         {
-            Debug.Log("correct");
             tree_text.SetActive(false);
             road_text.SetActive(true);
             ChatManager.Instance.road.SetActive(false);
             count++;
+            finish = true;
         }
 
+        if(finish)
+        {
+            StartCoroutine(ChatManager.Instance.FadeIn());
+        }
     }
 }

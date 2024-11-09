@@ -249,9 +249,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   convo:
-  - "\uADF8\uB2C8\uAE4C \uB0B4\uAC00 \uAC19\uC774 \uAC00\uC790\uACE0 \uADF8\uB807\uAC8C
-    \uB9D0\uC744 \uD588\uB294\uB370.. \uB2E4\uB4E4 \uADF8\uAE5F \uBC94 \uD558\uB098
-    \uC7A1\uC544\uBCF4\uACA0\uB2E4\uACE0 \uD608\uC548\uC774 \uB3FC\uC11C\uB294..."
   - "\uC5B4\uB461\uB2E4. \uAD1C\uD788 \uC654\uB098\u2026"
   - "\uC544\uB2C8\uC57C. \uB9C8\uC744 \uC0AC\uB78C\uB4E4 \uCC3E\uAE30 \uC804\uAE4C\uC9C4
     \uBABB \uB3CC\uC544\uAC00"
@@ -260,8 +257,6 @@ MonoBehaviour:
     \uC7A1\uC544\uBCF4\uACA0\uB2E4\uACE0 \uD608\uC548\uC774 \uB3FC\uC11C\uB294\u2026"
   - "\uBC14\uB78C\uB3C4 \uC0B4\uC9DD \uCD94\uC6CC\uC9C4 \uAC83 \uAC19\uACE0.. \uC815\uB9D0
     \uC544\uBB34\uB3C4 \uC5C6\uB124\u2026"
-  - 
-  - 
   convoIndex: 0
 --- !u!1 &382077722
 GameObject:
@@ -586,9 +581,6 @@ GameObject:
   m_Component:
   - component: {fileID: 682587271}
   - component: {fileID: 682587272}
-  - component: {fileID: 682587275}
-  - component: {fileID: 682587274}
-  - component: {fileID: 682587273}
   m_Layer: 0
   m_Name: ChatManager
   m_TagString: Untagged
@@ -639,42 +631,6 @@ MonoBehaviour:
   scene1: 0
   scene2: 0
   scene3: 0
---- !u!114 &682587273
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 682587270}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd3c697b0b09ac145a5ba1cfe8877d71, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &682587274
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 682587270}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 682708be27f291347b3f7c70a3f1218e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!114 &682587275
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 682587270}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: feff7e73a5465544681836ba59fe9309, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &702630545
 GameObject:
   m_ObjectHideFlags: 0
@@ -728,7 +684,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.21383637, g: 0.21383637, b: 0.21383637, a: 0.45882353}
+  m_Color: {r: 0.21383637, g: 0.21383637, b: 0.21383637, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1
@@ -996,7 +952,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &945281092
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1153,7 +1109,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: d8c1234a1d565b74e92dc6dde40965c5, type: 3}
     m_FontSize: 40
     m_FontStyle: 0
     m_BestFit: 0
@@ -1504,7 +1460,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Material: {fileID: 0}
-  m_Color: {r: 0.21383637, g: 0.21383637, b: 0.21383637, a: 0.45882353}
+  m_Color: {r: 0.21383637, g: 0.21383637, b: 0.21383637, a: 0}
   m_RaycastTarget: 1
   m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
   m_Maskable: 1

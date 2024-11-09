@@ -81,7 +81,7 @@ public class ChatManager : MonoBehaviour
             if (!scene1)
             {
                 //gameObject.GetComponent<Scene1>().enabled = true;
-                if (human_convo.convoIndex == 0)
+                if (human_convo.convoIndex < 3)
                 {
                     PrintHumanConvo();
                 }
@@ -93,23 +93,18 @@ public class ChatManager : MonoBehaviour
             // scene2 시작
             else if (!scene2)
             {
-                //gameObject.GetComponent<Scene2>().enabled = true;
-                //scene2 = true;
-
-
-                if (human_convo.convoIndex > 0 && human_convo.convoIndex < 5)
+                if (human_convo.convoIndex == 3)
                 {
                     PrintHumanConvo();
                 }
-                else
+/*                else
                 {
                     StartCoroutine(FadeIn());
-                }
+                }*/
             }
             // scene3 시작
             else
             {
-                gameObject.GetComponent<Scene3>().enabled = true;
                 scene3 = true;
             }
 
