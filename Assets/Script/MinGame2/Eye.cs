@@ -5,6 +5,7 @@ using UnityEngine;
 public class Eye : MonoBehaviour
 {
     private float timer;
+    public GameObject eye_back;
 
     // Start is called before the first frame update
     void Start()
@@ -41,7 +42,7 @@ public class Eye : MonoBehaviour
         while(timer < 2.0f && Time.timeScale == 1)
         {
             timer += Time.deltaTime;
-            transform.localScale = new Vector3(transform.localScale.x + 0.001f, transform.localScale.y + 0.001f, 0);
+            eye_back.transform.localScale = new Vector3(eye_back.transform.localScale.x + 0.001f, eye_back.transform.localScale.y + 0.001f, 0);
 
             yield return null;
         }
@@ -52,6 +53,7 @@ public class Eye : MonoBehaviour
             Time.timeScale = 0;
             gameObject.transform.localPosition = Vector3.zero;
             gameObject.transform.localScale = new Vector3(7, 7, 0);
+            gameObject.GetComponent<SpriteRenderer>().sortingOrder = 2;
             GetComponentInParent<SystemManager>().fail_eye_num++;
         }
 
