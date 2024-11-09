@@ -27,7 +27,7 @@ public class Button : MonoBehaviour
         }
     }
 
-    public void tree_text()
+    public void show_tree_text()
     {
         road_text.SetActive(false);
         tree_text.SetActive(true);
@@ -35,7 +35,7 @@ public class Button : MonoBehaviour
         count++;
     }
 
-    public void road_text()
+    public void show_road_text()
     {
         tree_text.SetActive(false);
         road_text.SetActive(true);
