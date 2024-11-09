@@ -996,7 +996,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &945281092
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1015,7 +1015,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 150}
+  m_AnchoredPosition: {x: 0, y: 893}
   m_SizeDelta: {x: 1800, y: 300}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &945281094
@@ -1129,8 +1129,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 1500, y: 200}
+  m_AnchoredPosition: {x: 1, y: 81}
+  m_SizeDelta: {x: 2000, y: 200}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1199528132
 MonoBehaviour:
@@ -1158,16 +1158,17 @@ MonoBehaviour:
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 0
-    m_MaxSize: 50
+    m_MaxSize: 60
     m_Alignment: 4
     m_AlignByGeometry: 0
     m_RichText: 1
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
-    m_LineSpacing: 1
-  m_Text: "\uADF8\uB2C8\uAE4C \uB0B4\uAC00 \uAC19\uC774 \uAC00\uC790\uACE0 \uADF8\uB807\uAC8C
-    \uB9D0\uC744 \uD588\uB294\uB370.. \uB2E4\uB4E4 \uADF8\uAE5F \uBC94 \uD558\uB098
-    \uC7A1\uC544\uBCF4\uACA0\uB2E4\uACE0 \uD608\uC548\uC774 \uB3FC\uC11C\uB294..."
+    m_LineSpacing: 1.25
+  m_Text: "'\uADF8\uB7EC\uB2C8\uAE4C \uB0B4\uAC00 \uAC19\uC774 \uAC00\uC790\uACE0
+    \uADF8\uB807\uAC8C \uB9D0\uC744 \uD588\uB294\uB370, \uB2E4\uB4E4 \uADF8\uAE5F
+    \uBC94 \uD558\uB098 \uC7A1\uC544\uBCF4\uACA0\uB2E4\uACE0 \uD608\uC548\uC774 \uB418\uC5B4\uC11C\uB294
+    \u22EF.'"
 --- !u!222 &1199528133
 CanvasRenderer:
   m_ObjectHideFlags: 0

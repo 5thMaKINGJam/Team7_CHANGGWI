@@ -16,21 +16,6 @@ public class Eye : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-/*        timer += Time.deltaTime;
-        transform.localScale = new Vector3(transform.localScale.x + 0.001f, transform.localScale.y + 0.001f, 0);
-
-        if (timer > 2.0f)
-        {
-            gameObject.transform.localPosition = Vector3.zero;
-            gameObject.transform.localScale = new Vector3(7, 7, 0);
-        }
-        else
-        {
-            if (Input.GetMouseButtonDown(0))
-            {
-                Destroy(this.gameObject);
-            }
-        }*/
 
     }
 
@@ -52,7 +37,7 @@ public class Eye : MonoBehaviour
         {
             Time.timeScale = 0;
             gameObject.transform.localPosition = Vector3.zero;
-            gameObject.transform.localScale = new Vector3(7, 7, 0);
+            gameObject.transform.localScale = new Vector3(6.7f, 6.7f, 0);
             gameObject.GetComponent<SpriteRenderer>().sortingOrder = 2;
             GetComponentInParent<SystemManager>().fail_eye_num++;
         }

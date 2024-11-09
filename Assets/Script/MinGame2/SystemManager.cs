@@ -53,6 +53,7 @@ public class SystemManager : MonoBehaviour
             {
                 CancelInvoke("MakeEyes");
             }
+
             yield return null;
         }
         time_text.text = "0.00";
