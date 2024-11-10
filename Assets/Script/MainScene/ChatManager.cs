@@ -8,7 +8,7 @@ using UnityEngine.SceneManagement;
 
 public class ChatManager : MonoBehaviour
 {
-    private static ChatManager instance = null;
+    //private static ChatManager instance = null;
 
     public GameObject forest1;
     public GameObject forest2;
@@ -38,7 +38,7 @@ public class ChatManager : MonoBehaviour
     public int loop_num = 1;
     public int index;
 
-    private void Awake()
+/*    private void Awake()
     {
         // ΩÃ±€≈Ê
         if (null == instance)
@@ -50,9 +50,9 @@ public class ChatManager : MonoBehaviour
         {
             Destroy(this.gameObject);
         }
-    }
+    }*/
 
-    public static ChatManager Instance
+/*    public static ChatManager Instance
     {
         get
         {
@@ -62,18 +62,15 @@ public class ChatManager : MonoBehaviour
             }
             return instance;
         }
-    }
+    }*/
 
     // Start is called before the first frame update
     void Start()
     {
-        human_convo = human.GetComponentInChildren<Conversation>();
-        chang_convo = changgwi.GetComponentInChildren<Conversation>();
+        human_convo_list = human_convo.GetComponent<Conversation>().convo;
+        chang_convo_list = chang_convo.GetComponent<Conversation>().convo;
 
-        human_convo_list = human_convo.convo;
-        chang_convo_list = chang_convo.convo;
-
-        if(loop_num == 1)
+        if (loop_num == 1)
         {
             index = 3;
         }
@@ -95,6 +92,7 @@ public class ChatManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
         // Ω£1
         if (Input.GetKeyDown(KeyCode.Space) || Input.GetMouseButtonDown(0))
         {

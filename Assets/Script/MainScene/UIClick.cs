@@ -38,21 +38,21 @@ public class UIClick : MonoBehaviour, IPointerClickHandler
         {
             road_text.SetActive(false);
             tree_text.SetActive(true);
-            ChatManager.Instance.tree.SetActive(false);
+            GameObject.Find("ChatManager").GetComponent<ChatManager>().tree.SetActive(false);
             count++;
         }
         else if (clickedObject.name == "road")
         {
             tree_text.SetActive(false);
             road_text.SetActive(true);
-            ChatManager.Instance.road.SetActive(false);
+            GameObject.Find("ChatManager").GetComponent<ChatManager>().road.SetActive(false);
             count++;
             finish = true;
         }
 
         if(finish)
         {
-            StartCoroutine(ChatManager.Instance.FadeIn());
+            StartCoroutine(GameObject.Find("ChatManager").GetComponent<ChatManager>().FadeIn());
         }
     }
 }

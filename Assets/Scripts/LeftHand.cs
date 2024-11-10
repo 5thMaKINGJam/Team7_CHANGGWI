@@ -56,7 +56,7 @@ public class LeftHand : MonoBehaviour
             Pray();
             //Time.timeScale = 0f;
             //SceneManager.LoadScene("다음스토리");
-            StartCoroutine(ChangeScene("Main(2)"));
+            //StartCoroutine(ChangeScene("Main(2)"));
         }
         if(timeLimit<=0)
         {

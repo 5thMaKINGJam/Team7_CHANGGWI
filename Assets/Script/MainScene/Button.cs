@@ -31,7 +31,7 @@ public class Button : MonoBehaviour
     {
         road_text.SetActive(false);
         tree_text.SetActive(true);
-        ChatManager.Instance.tree.SetActive(false);
+        //ChatManager.Instance.tree.SetActive(false);
         count++;
     }
 
@@ -39,7 +39,7 @@ public class Button : MonoBehaviour
     {
         tree_text.SetActive(false);
         road_text.SetActive(true);
-        ChatManager.Instance.road.SetActive(false);
+        //ChatManager.Instance.road.SetActive(false);
         count++;
     }
 }
