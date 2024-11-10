@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UIElements;
 
 public class FootPrint : MonoBehaviour
@@ -24,6 +25,7 @@ public class FootPrint : MonoBehaviour
     float chang_x;
     float chang_y;
     float chang_rotation = 0;
+    bool fail = false;
 
     // Start is called before the first frame update
     void Start()
@@ -136,6 +138,8 @@ public class FootPrint : MonoBehaviour
 
                     // 실패 화면
                     gameover.SetActive(true);
+                    StartCoroutine(ChangeScene("Title"));
+                    fail = true;
                     break;
                 }
 
@@ -148,7 +152,11 @@ public class FootPrint : MonoBehaviour
             //yield return new WaitForSeconds(0.5f);
         }
 
-        gameclear.SetActive(true);
+        if (!fail)
+        {
+            StartCoroutine(ChangeScene("MiniGame2"));
+        }
+        
 
     }
 
@@ -205,6 +213,14 @@ public class FootPrint : MonoBehaviour
             }
         }
 
+    }
+
+    IEnumerator ChangeScene(string sceneName)
+    {
+        yield return new WaitForSeconds(2.0f);
+
+        // 씬 전환
+        SceneManager.LoadScene(sceneName);
     }
 
 }

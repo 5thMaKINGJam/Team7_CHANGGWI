@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Data;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI; 
 public class Scene3 : MonoBehaviour
 {
@@ -53,6 +54,7 @@ public class Scene3 : MonoBehaviour
                     if (index >= change_conv1.transform.childCount)
                     {
                         index = 3;
+                        StartCoroutine(ChangeScene("Main5"));
                     }
                 }
                 else
@@ -68,6 +70,7 @@ public class Scene3 : MonoBehaviour
                     if (index >= change_conv2.transform.childCount)
                     {
                         index = 3;
+                        StartCoroutine(ChangeScene("Main5"));
                     }
                 }
             }
@@ -106,6 +109,14 @@ public class Scene3 : MonoBehaviour
         choice_num = 2;
         index = 0;
 
+    }
+
+    IEnumerator ChangeScene(string sceneName)
+    {
+        yield return new WaitForSeconds(2.0f);
+
+        // ¾À ÀüÈ¯
+        SceneManager.LoadScene(sceneName);
     }
 
 }

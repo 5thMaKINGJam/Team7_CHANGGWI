@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.PlayerLoop;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.UIElements;
 
@@ -28,8 +29,10 @@ public class SystemManager : MonoBehaviour
         if (fail_eye_num >= 3)
         {
             CancelInvoke("MakeEyes");
-            Time.timeScale = 0;
             gameover.SetActive(true);
+            StartCoroutine(ChangeScene("Title"));
+
+            //Time.timeScale = 0;
         }
     }
 
@@ -57,7 +60,7 @@ public class SystemManager : MonoBehaviour
             yield return null;
         }
         time_text.text = "0.00";
-        gameclear.SetActive(true);
+        StartCoroutine(ChangeScene("MiniGame3"));
 
     }
 
@@ -72,5 +75,13 @@ public class SystemManager : MonoBehaviour
         position = new Vector3(x, y, 0);
 
         Instantiate(eye, position, Quaternion.identity, GameObject.Find("Eyes").transform);
+    }
+
+    IEnumerator ChangeScene(string sceneName)
+    {
+        yield return new WaitForSeconds(2.0f);
+
+        // ¾À ÀüÈ¯
+        SceneManager.LoadScene(sceneName);
     }
 }

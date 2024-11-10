@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class Tea_Convo : MonoBehaviour
@@ -79,6 +80,8 @@ public class Tea_Convo : MonoBehaviour
                 if (index >= transform.childCount)
                 {
                     Debug.Log("다음으로 넘어가기");
+                    index = transform.childCount - 1;
+                    StartCoroutine(ChangeScene("MiniGame1"));
                 }
             }
 
@@ -107,5 +110,13 @@ public class Tea_Convo : MonoBehaviour
         index = 0;
         first = false;
         second = true;
+    }
+
+    IEnumerator ChangeScene(string sceneName)
+    {
+        yield return new WaitForSeconds(2.0f);
+
+        // 씬 전환
+        SceneManager.LoadScene(sceneName);
     }
 }

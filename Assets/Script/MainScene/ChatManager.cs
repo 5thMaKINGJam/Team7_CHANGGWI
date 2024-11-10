@@ -4,6 +4,7 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class ChatManager : MonoBehaviour
 {
@@ -75,20 +76,18 @@ public class ChatManager : MonoBehaviour
         if(loop_num == 1)
         {
             index = 3;
-            loop_num++;
         }
         else if(loop_num == 2)
         {
-            loop_num++;
+
         }
         else if(loop_num == 3)
         {
-            loop_num++;
+
         }
         else
         {
             index = 1;
-            loop_num++;
         }
 
     }
@@ -119,15 +118,30 @@ public class ChatManager : MonoBehaviour
                 {
                     PrintHumanConvo();
                 }
-/*                else
-                {
-                    StartCoroutine(FadeIn());
-                }*/
             }
             // scene3 Ω√¿€
             else
             {
-                scene3 = true;
+/*                if(loop_num == 1)
+                {
+                    loop_num++;
+                    SceneManager.LoadScene("Main3");
+                }
+                else if(loop_num == 2)
+                {
+                    loop_num++;
+                    SceneManager.LoadScene("Main3(2)");
+                }
+                else if (loop_num == 3)
+                {
+                    loop_num++;
+                    SceneManager.LoadScene("Main3(3)");
+                }
+                else
+                {
+                    loop_num++;
+                    SceneManager.LoadScene("Main3(4)");
+                }*/
             }
 
         }
@@ -204,13 +218,32 @@ public class ChatManager : MonoBehaviour
             tree.SetActive(true);
             road.SetActive(true);
         }
-        else if(!scene2)
+        else if (!scene2)
         {
-            forest2.SetActive(false);
-            forest3.SetActive(true);
             scene2 = true;
             changgwi.SetActive(false);
             human.SetActive(false);
+
+            if (loop_num == 1)
+            {
+                loop_num=2;
+                SceneManager.LoadScene("Main3");
+            }
+            else if (loop_num == 2)
+            {
+                loop_num=3;
+                SceneManager.LoadScene("Main3(2)");
+            }
+            else if (loop_num == 3)
+            {
+                loop_num=4;
+                SceneManager.LoadScene("Main3(3)");
+            }
+            else
+            {
+                loop_num=5;
+                SceneManager.LoadScene("Main3(4)");
+            }
         }
 
         //StartCoroutine(FadeOut());
