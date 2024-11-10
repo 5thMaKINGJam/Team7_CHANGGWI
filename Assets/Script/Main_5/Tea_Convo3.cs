@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Tea_Convo2 : MonoBehaviour
+public class Tea_Convo3 : MonoBehaviour
 {
     public GameObject choice_panel;
 
@@ -18,6 +18,7 @@ public class Tea_Convo2 : MonoBehaviour
     int choice_num;
 
     bool face = false;
+    private int count = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -55,6 +56,7 @@ public class Tea_Convo2 : MonoBehaviour
                     // 선택지 1번 경우
                     convo1.transform.GetChild(index).gameObject.SetActive(true);
                     index++;
+                    choice_panel.SetActive(false);
 
                     if (index >= convo1.transform.childCount)
                     {
@@ -68,6 +70,7 @@ public class Tea_Convo2 : MonoBehaviour
                     // 선택지 2번 경우
                     convo2.transform.GetChild(index).gameObject.SetActive(true);
                     index++;
+                    choice_panel.SetActive(false);
 
                     if (index >= convo2.transform.childCount)
                     {
@@ -86,19 +89,27 @@ public class Tea_Convo2 : MonoBehaviour
 
                     if (index >= transform.childCount)
                     {
-                        for(int i = 0; i <transform.childCount; i++)
+                        for (int i = 0; i < transform.childCount; i++)
                         {
                             transform.GetChild(i).gameObject.SetActive(false);
                         }
                         face = true;
-                        
+
                     }
                 }
                 else
                 {
-                    changgwi_face.SetActive(true);
+                    if(count > 5)
+                    {
+                        changgwi_face.SetActive(true);
+                    }
+                    else
+                    {
+                        count++;
+                    }
+                    
                 }
-                
+
             }
 
         }
