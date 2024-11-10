@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class TimeBar : MonoBehaviour
@@ -29,9 +30,12 @@ public class TimeBar : MonoBehaviour
         if (timer.value > 0.0f)
         {
             timer.value-=Time.deltaTime;
-        }else { 
+        }
+        else
+        { 
             timer.value = 0.0f;
         }
+
     }
 
     

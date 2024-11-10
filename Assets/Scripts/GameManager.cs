@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -30,9 +31,18 @@ public class GameManager : MonoBehaviour
 
     void ShowGameOverPanel()
     {
-      gameOverPanel.SetActive(true);
+        gameOverPanel.SetActive(true);
+        StartCoroutine(ChangeScene("Title"));
     }
 
-   
-  
+    IEnumerator ChangeScene(string sceneName)
+    {
+        yield return new WaitForSeconds(2.0f);
+
+        // ¾À ÀüÈ¯
+        SceneManager.LoadScene(sceneName);
+    }
+
+
+
 }

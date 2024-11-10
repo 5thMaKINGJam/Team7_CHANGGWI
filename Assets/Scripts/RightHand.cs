@@ -45,8 +45,9 @@ public class RightHand : MonoBehaviour
             //이김
             inputAllowed = false;
             Pray();
-            Time.timeScale = 0f;
-                    //SceneManager.LoadScene("다음스토리");
+            //Time.timeScale = 0f;
+            //SceneManager.LoadScene("다음스토리");
+            StartCoroutine(ChangeScene("Main(2)"));
                 }
         
         if (timeLimit <= 0)
@@ -85,5 +86,13 @@ public class RightHand : MonoBehaviour
         transform.position = new Vector3(-1.5f, -1f, 0);
     }
 
+
+    IEnumerator ChangeScene(string sceneName)
+    {
+        yield return new WaitForSeconds(2.0f);
+
+        // 씬 전환
+        SceneManager.LoadScene(sceneName);
+    }
 
 }

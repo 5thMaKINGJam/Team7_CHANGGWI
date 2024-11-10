@@ -54,8 +54,9 @@ public class LeftHand : MonoBehaviour
         {
             inputAllowed = false;
             Pray();
-            Time.timeScale = 0f;
+            //Time.timeScale = 0f;
             //SceneManager.LoadScene("다음스토리");
+            StartCoroutine(ChangeScene("Main(2)"));
         }
         if(timeLimit<=0)
         {
@@ -92,7 +93,15 @@ public class LeftHand : MonoBehaviour
     void Pray()
     {
         transform.position = new Vector3(0f, -1f, 0f);
-        Time.timeScale = 0f;
+        //Time.timeScale = 0f;
+    }
+
+    IEnumerator ChangeScene(string sceneName)
+    {
+        yield return new WaitForSeconds(2.0f);
+
+        // 씬 전환
+        SceneManager.LoadScene(sceneName);
     }
 
 
