@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class Tea_Convo4 : MonoBehaviour
 {
@@ -71,6 +72,10 @@ public class Tea_Convo4 : MonoBehaviour
                     if (count > 5)
                     {
                         changgwi_face.SetActive(true);
+
+                        Debug.Log("다음으로 넘어가기");
+                        index = transform.childCount - 1;
+                        StartCoroutine(ChangeScene("Ending"));
                     }
                     else
                     {
@@ -100,5 +105,13 @@ public class Tea_Convo4 : MonoBehaviour
         choice_panel.SetActive(false);
         first = false;
         second = true;
+    }
+
+    IEnumerator ChangeScene(string sceneName)
+    {
+        yield return new WaitForSeconds(2.0f);
+
+        // 씬 전환
+        SceneManager.LoadScene(sceneName);
     }
 }

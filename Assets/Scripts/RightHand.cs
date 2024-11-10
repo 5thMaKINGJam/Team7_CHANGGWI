@@ -6,6 +6,7 @@ using UnityEngine.SceneManagement;
 public class RightHand : MonoBehaviour
 {
     public float timeLimit = 20f;
+    public string next_scene;
 
     private bool hasStarted = false;
     [SerializeField]
@@ -47,7 +48,7 @@ public class RightHand : MonoBehaviour
             Pray();
             //Time.timeScale = 0f;
             //SceneManager.LoadScene("다음스토리");
-            StartCoroutine(ChangeScene("Main(2)"));
+            StartCoroutine(ChangeScene(next_scene));
                 }
         
         if (timeLimit <= 0)

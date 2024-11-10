@@ -607,8 +607,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d025121c08be063479f90d5c3d56a3f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLimit: 20
-  next_scene: Main(2)
+  timeLimit: 15
+  next_scene: Main(3)
   inputAllowed: 1
   playerAngle: 3
   currentAngle: 0

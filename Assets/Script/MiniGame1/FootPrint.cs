@@ -19,6 +19,9 @@ public class FootPrint : MonoBehaviour
     public GameObject gameover;
     public GameObject gameclear;
 
+    public float time_level;
+    public string next_scene;
+
     float x = -8.0f;
     float y;
     float rotation = 0;
@@ -112,7 +115,7 @@ public class FootPrint : MonoBehaviour
 
                 // 3초 동안 키 입력 여부 확인
                 float time = 0.0f;
-                while (time < 1.0f)
+                while (time < time_level)
                 {
                     time += Time.deltaTime;
 
@@ -154,7 +157,7 @@ public class FootPrint : MonoBehaviour
 
         if (!fail)
         {
-            StartCoroutine(ChangeScene("MiniGame2"));
+            StartCoroutine(ChangeScene(next_scene));
         }
         
 

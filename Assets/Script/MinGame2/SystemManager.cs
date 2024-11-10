@@ -15,6 +15,9 @@ public class SystemManager : MonoBehaviour
     public GameObject gameover;
     public GameObject gameclear;
 
+    public float make_level;
+    public string next_scene;
+
     public int fail_eye_num = 0;
 
     // Start is called before the first frame update
@@ -48,7 +51,7 @@ public class SystemManager : MonoBehaviour
 
             if (!start)
             {
-                InvokeRepeating("MakeEyes", 0, 0.5f);
+                InvokeRepeating("MakeEyes", 0, make_level);
                 start = true;
             }
 
@@ -60,7 +63,7 @@ public class SystemManager : MonoBehaviour
             yield return null;
         }
         time_text.text = "0.00";
-        StartCoroutine(ChangeScene("MiniGame3"));
+        StartCoroutine(ChangeScene(next_scene));
 
     }
 

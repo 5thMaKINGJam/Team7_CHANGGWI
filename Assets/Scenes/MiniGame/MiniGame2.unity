@@ -425,6 +425,8 @@ MonoBehaviour:
   time_text: {fileID: 349601666}
   gameover: {fileID: 365059425}
   gameclear: {fileID: 0}
+  make_level: 0.5
+  next_scene: MiniGame3
   fail_eye_num: 0
 --- !u!82 &772955069
 AudioSource:

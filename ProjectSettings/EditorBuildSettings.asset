@@ -30,16 +30,37 @@ EditorBuildSettings:
     path: Assets/Scenes/Main/Main(2).unity
     guid: c70133aac29ced34abb4ab70f103ca41
   - enabled: 1
-    path: Assets/Scenes/Main5/Main_5(3).unity
-    guid: 955b333d788540149a64937775fe3248
+    path: Assets/Scenes/Main5/Main5(2).unity
+    guid: c9126be215fc5614da071af4234a1454
   - enabled: 1
     path: Assets/Scenes/MiniGame/MiniGame1(2).unity
-    guid: 7106d0a1e11c6ed4aa5251c1f4fbda97
+    guid: e39ad2a48a4d3174b8f388dc464ad9e5
   - enabled: 1
-    path: Assets/Scenes/Main/Main_Ending.unity
+    path: Assets/Scenes/MiniGame/MiniGame2(2).unity
+    guid: 63b510e3a7249a14db0b43dab4b02bcf
+  - enabled: 1
+    path: Assets/Scenes/MiniGame/MiniGame3(2).unity
+    guid: ac0d0fcba0eb21346afb2e361abf75b9
+  - enabled: 1
+    path: Assets/Scenes/Main/Main(3).unity
+    guid: c8296f9aa233c5d4d9c1099fcea1f7ab
+  - enabled: 1
+    path: Assets/Scenes/Main5/Main5(3).unity
+    guid: 955b333d788540149a64937775fe3248
+  - enabled: 1
+    path: Assets/Scenes/MiniGame/MiniGame1(3).unity
+    guid: bf20c17bb4a23554b83f6b119d8ca709
+  - enabled: 1
+    path: Assets/Scenes/MiniGame/MiniGame2(3).unity
+    guid: ca669cdd1017b634783c34ef60ea5696
+  - enabled: 1
+    path: Assets/Scenes/MiniGame/MiniGame3(3).unity
+    guid: 362848df7d70ef142944145b012cf4aa
+  - enabled: 1
+    path: Assets/Scenes/Main/Main(4).unity
     guid: f6d3c265c9ebe3444afc724ad58b9c4f
   - enabled: 1
-    path: Assets/Scenes/Main5/Main_5_Ending.unity
+    path: Assets/Scenes/Main5/Main5(4).unity
     guid: 2dd5bc01deaaef44bac067aa51904adb
   - enabled: 1
     path: Assets/Scenes/Ending.unity

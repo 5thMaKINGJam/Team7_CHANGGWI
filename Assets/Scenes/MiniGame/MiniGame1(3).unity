@@ -894,5 +894,5 @@ MonoBehaviour:
   - {fileID: 7795439136610982274, guid: fcda1887483f5ec4886520efffb7980d, type: 3}
   gameover: {fileID: 519083620}
   gameclear: {fileID: 0}
-  time_level: 1
-  next_scene: MiniGame2
+  time_level: 0.7
+  next_scene: MiniGame2(3)

@@ -79,11 +79,11 @@ public class ChatManager : MonoBehaviour
         }
         else if(loop_num == 2)
         {
-
+            index = 3;
         }
         else if(loop_num == 3)
         {
-
+            index = 3;
         }
         else
         {
