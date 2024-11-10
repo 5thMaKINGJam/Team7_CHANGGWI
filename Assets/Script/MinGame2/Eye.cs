@@ -6,10 +6,12 @@ public class Eye : MonoBehaviour
 {
     private float timer;
     public GameObject eye_back;
+    AudioSource eye_sound;
 
     // Start is called before the first frame update
     void Start()
     {
+        eye_sound = GetComponentInParent<AudioSource>();
         StartCoroutine(EyeEvent());
     }
 
@@ -36,6 +38,7 @@ public class Eye : MonoBehaviour
         if(timer > 2.0f)
         {
             Time.timeScale = 0;
+            eye_sound.Play();
             gameObject.transform.localPosition = Vector3.zero;
             gameObject.transform.localScale = new Vector3(6.7f, 6.7f, 0);
             gameObject.GetComponent<SpriteRenderer>().sortingOrder = 2;
