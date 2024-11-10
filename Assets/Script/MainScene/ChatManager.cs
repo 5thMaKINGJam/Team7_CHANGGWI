@@ -34,6 +34,9 @@ public class ChatManager : MonoBehaviour
     public bool scene2 = false;
     public bool scene3 = false;
 
+    public int loop_num = 1;
+    public int index;
+
     private void Awake()
     {
         // ΩÃ±€≈Ê
@@ -69,6 +72,25 @@ public class ChatManager : MonoBehaviour
         human_convo_list = human_convo.convo;
         chang_convo_list = chang_convo.convo;
 
+        if(loop_num == 1)
+        {
+            index = 3;
+            loop_num++;
+        }
+        else if(loop_num == 2)
+        {
+            loop_num++;
+        }
+        else if(loop_num == 3)
+        {
+            loop_num++;
+        }
+        else
+        {
+            index = 1;
+            loop_num++;
+        }
+
     }
 
     // Update is called once per frame
@@ -81,7 +103,7 @@ public class ChatManager : MonoBehaviour
             if (!scene1)
             {
                 //gameObject.GetComponent<Scene1>().enabled = true;
-                if (human_convo.convoIndex < 3)
+                if (human_convo.convoIndex < index)
                 {
                     PrintHumanConvo();
                 }
@@ -93,7 +115,7 @@ public class ChatManager : MonoBehaviour
             // scene2 Ω√¿€
             else if (!scene2)
             {
-                if (human_convo.convoIndex == 3)
+                if (human_convo.convoIndex == index)
                 {
                     PrintHumanConvo();
                 }

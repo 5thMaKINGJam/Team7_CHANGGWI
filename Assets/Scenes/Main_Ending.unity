@@ -180,7 +180,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8506522d6def61f4fb79c6e91a441522, type: 3}
+  m_Sprite: {fileID: 21300000, guid: c9244469b1b237a4bad44c2765376944, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -249,14 +249,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   convo:
-  - "\uC5B4\uB461\uB2E4. \uAD1C\uD788 \uC654\uB098\u2026"
-  - "\uC544\uB2C8\uC57C. \uB9C8\uC744 \uC0AC\uB78C\uB4E4 \uCC3E\uAE30 \uC804\uAE4C\uC9C4
-    \uBABB \uB3CC\uC544\uAC00"
-  - "\uADF8\uB2C8\uAE4C \uB0B4\uAC00 \uAC19\uC774 \uAC00\uC790\uACE0 \uADF8\uB807\uAC8C
-    \uB9D0\uC744 \uD588\uB294\uB370.. \uB2E4\uB4E4 \uADF8\uAE5F \uBC94 \uD558\uB098
-    \uC7A1\uC544\uBCF4\uACA0\uB2E4\uACE0 \uD608\uC548\uC774 \uB3FC\uC11C\uB294\u2026"
-  - "\uBC14\uB78C\uB3C4 \uC0B4\uC9DD \uCD94\uC6CC\uC9C4 \uAC83 \uAC19\uACE0.. \uC815\uB9D0
-    \uC544\uBB34\uB3C4 \uC5C6\uB124\u2026"
+  - "\uC0AC\uB78C\uB4E4\uC744 \uBE68\uB9AC \uCC3E\uC544\uC11C \uC5EC\uAE30\uC11C
+    \uBC97\uC5B4\uB098\uC57C \uD574"
+  - "\uBD84\uBA85\uD788 \uBB54\uAC00 \uC798\uBABB\uB410\uC5B4. \uC5EC\uAE30\uC11C
+    \uB3C4\uB9DD\uCCD0\uC57C \uD574. \uBB34\uC870\uAC74 \uBB34\uC2DC\uD574\uC57C
+    \uD574. \uC815\uC2E0\uCC28\uB824."
   convoIndex: 0
 --- !u!1 &382077722
 GameObject:
@@ -393,7 +390,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 0f3547efcdd8e3542a11a4912021d4de, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 522464dd57e215e4c809c8ed41f18c24, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -728,6 +725,8 @@ MonoBehaviour:
   scene1: 0
   scene2: 0
   scene3: 0
+  loop_num: 4
+  index: 0
 --- !u!1 &702630545
 GameObject:
   m_ObjectHideFlags: 0
@@ -935,7 +934,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4715676111d622f428fa2ab8f5861c12, type: 3}
     m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 0
@@ -947,8 +946,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uB098\uBB34\uAC00 \uBB34\uC131\uD558\uB124.\uBC24\uC5D0 \uBCF4\uB2C8\uAE4C
-    \uC5B4\uB518\uAC00\u2026 \uC544\uB2C8\uB2E4, \uB098\uB3C4 \uCC38."
+  m_Text: "\u22EF\u22EF"
 --- !u!222 &802991195
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1015,7 +1013,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 01904feb8197a344f9847ea6feb299ba, type: 3}
+  m_Sprite: {fileID: 21300000, guid: fc8f575f41f3ea54bb9be9763696f42b, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1049,7 +1047,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &945281092
 RectTransform:
   m_ObjectHideFlags: 0
@@ -1218,7 +1216,10 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1.25
-  m_Text: "\uC5B4\uB461\uB2E4. \uAD1C\uD788 \uC654\uB098\u2026"
+  m_Text: "'\uADF8\uB7EC\uB2C8\uAE4C \uB0B4\uAC00 \uAC19\uC774 \uAC00\uC790\uACE0
+    \uADF8\uB807\uAC8C \uB9D0\uC744 \uD588\uB294\uB370, \uB2E4\uB4E4 \uADF8\uAE5F
+    \uBC94 \uD558\uB098 \uC7A1\uC544\uBCF4\uACA0\uB2E4\uACE0 \uD608\uC548\uC774 \uB418\uC5B4\uC11C\uB294
+    \u22EF.'"
 --- !u!222 &1199528133
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1353,7 +1354,7 @@ MonoBehaviour:
     m_PersistentCalls:
       m_Calls: []
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_Font: {fileID: 12800000, guid: 4715676111d622f428fa2ab8f5861c12, type: 3}
     m_FontSize: 35
     m_FontStyle: 0
     m_BestFit: 0
@@ -1365,8 +1366,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uB2E4\uB978 \uC0DD\uAC01 \uD558\uC9C0 \uB9D0\uACE0 \uBE68\uB9AC \uCC3E\uC544\uC11C
-    \uB3CC\uC544\uAC00\uC790."
+  m_Text: "\u22EF\u22EF"
 --- !u!222 &1548702586
 CanvasRenderer:
   m_ObjectHideFlags: 0
