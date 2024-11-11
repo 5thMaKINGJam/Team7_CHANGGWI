@@ -13,7 +13,6 @@ public class SystemManager : MonoBehaviour
     public Text time_text;
 
     public GameObject gameover;
-    public GameObject gameclear;
 
     public float make_level;
     public string next_scene;
