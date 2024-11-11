@@ -17,7 +17,6 @@ public class FootPrint : MonoBehaviour
     public List<GameObject> key = new List<GameObject>();
 
     public GameObject gameover;
-    public GameObject gameclear;
 
     public float time_level;
     public string next_scene;
@@ -141,6 +140,7 @@ public class FootPrint : MonoBehaviour
 
                     // 실패 화면
                     gameover.SetActive(true);
+                    GameObject.Find("Main Camera").GetComponent<AudioSource>().Pause();
                     StartCoroutine(ChangeScene("Title"));
                     fail = true;
                     break;
@@ -152,7 +152,6 @@ public class FootPrint : MonoBehaviour
                 yield return new WaitForSeconds(1.0f);
             }
 
-            //yield return new WaitForSeconds(0.5f);
         }
 
         if (!fail)
@@ -220,7 +219,7 @@ public class FootPrint : MonoBehaviour
 
     IEnumerator ChangeScene(string sceneName)
     {
-        yield return new WaitForSeconds(2.0f);
+        yield return new WaitForSeconds(1.0f);
 
         // 씬 전환
         SceneManager.LoadScene(sceneName);

@@ -12,80 +12,28 @@ public class ChatManager : MonoBehaviour
 
     public GameObject forest1;
     public GameObject forest2;
-    public GameObject forest3;
     public GameObject panel;
 
     public GameObject tree;
     public GameObject road;
 
     public GameObject human;
-    public GameObject changgwi;
-
     public Conversation human_convo;
-    public Conversation chang_convo;
 
     List<string> human_convo_list;
-    List<string> chang_convo_list;
 
     public Text human_txt;
-    public Text chang_txt;
 
-    public bool human_turn = true;
     public bool scene1 = false;
     public bool scene2 = false;
-    public bool scene3 = false;
 
-    public int loop_num = 1;
-    public int index;
-
-/*    private void Awake()
-    {
-        // 싱글톤
-        if (null == instance)
-        {
-            instance = this;
-            DontDestroyOnLoad(this.gameObject);
-        }
-        else
-        {
-            Destroy(this.gameObject);
-        }
-    }*/
-
-/*    public static ChatManager Instance
-    {
-        get
-        {
-            if (null == instance)
-            {
-                return null;
-            }
-            return instance;
-        }
-    }*/
+    public int index;   // scene2로 넘어가는 기준 index
+    public string next_scene;    // 다음 씬 이름 
 
     // Start is called before the first frame update
     void Start()
     {
         human_convo_list = human_convo.GetComponent<Conversation>().convo;
-        chang_convo_list = chang_convo.GetComponent<Conversation>().convo;
-
-        if (loop_num == 1)
-        {
-            index = 3;
-        }
-        else if(loop_num == 2)
-        {
-            index = 3;
-        }
-        else if(loop_num == 3)
-        {
-            index = 3;
-        }
-        else
-        {
-            index = 1;
-        }
 
     }
 
@@ -99,47 +47,26 @@ public class ChatManager : MonoBehaviour
             // scene1 시작
             if (!scene1)
             {
-                //gameObject.GetComponent<Scene1>().enabled = true;
+                // scene1 대사 끝날 때까지 대사 출력
                 if (human_convo.convoIndex < index)
                 {
                     PrintHumanConvo();
                 }
                 else
                 {
+                    // scene2로 넘어가기
                     StartCoroutine(FadeIn());
+                    human.SetActive(false);
                 }
             }
             // scene2 시작
             else if (!scene2)
             {
-                if (human_convo.convoIndex == index)
+                if (human_convo.convoIndex < human_convo_list.Count)
                 {
+                    // 다음 대사 출력
                     PrintHumanConvo();
                 }
-            }
-            // scene3 시작
-            else
-            {
-/*                if(loop_num == 1)
-                {
-                    loop_num++;
-                    SceneManager.LoadScene("Main3");
-                }
-                else if(loop_num == 2)
-                {
-                    loop_num++;
-                    SceneManager.LoadScene("Main3(2)");
-                }
-                else if (loop_num == 3)
-                {
-                    loop_num++;
-                    SceneManager.LoadScene("Main3(3)");
-                }
-                else
-                {
-                    loop_num++;
-                    SceneManager.LoadScene("Main3(4)");
-                }*/
             }
 
         }
@@ -148,17 +75,9 @@ public class ChatManager : MonoBehaviour
     
     public void PrintHumanConvo()
     {
-        changgwi.SetActive(false);
         human.SetActive(true);
         human_txt.text = human_convo_list[human_convo.convoIndex].ToString();
         human_convo.convoIndex++;
-    }
-
-    public void PrintChanggwiConvo()
-    {
-        changgwi.SetActive(true);
-        chang_txt.text = chang_convo_list[chang_convo.convoIndex].ToString();
-        chang_convo.convoIndex++;
     }
 
 
@@ -203,48 +122,26 @@ public class ChatManager : MonoBehaviour
             yield return null;
         }
 
-        background.SetActive(false);
-
         if (!scene1)
         {
+            scene1 = true;
+
             forest1.SetActive(false);
             forest2.SetActive(true);
-            scene1 = true;
-            changgwi.SetActive(false);
-            human.SetActive(false);
 
             tree.SetActive(true);
             road.SetActive(true);
+
+            background.SetActive(false);
         }
         else if (!scene2)
         {
             scene2 = true;
-            changgwi.SetActive(false);
             human.SetActive(false);
 
-            if (loop_num == 1)
-            {
-                loop_num=2;
-                SceneManager.LoadScene("Main3");
-            }
-            else if (loop_num == 2)
-            {
-                loop_num=3;
-                SceneManager.LoadScene("Main3(2)");
-            }
-            else if (loop_num == 3)
-            {
-                loop_num=4;
-                SceneManager.LoadScene("Main3(3)");
-            }
-            else
-            {
-                loop_num=5;
-                SceneManager.LoadScene("Main3(4)");
-            }
+            SceneManager.LoadScene(next_scene);
         }
 
-        //StartCoroutine(FadeOut());
     }
 
 }

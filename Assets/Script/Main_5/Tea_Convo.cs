@@ -16,7 +16,8 @@ public class Tea_Convo : MonoBehaviour
     bool first = false;
     bool second = false;
     bool third = false;
-    int choice_num;
+    public int choice_num;
+    public string next_scene;
 
     // Start is called before the first frame update
     void Start()
@@ -81,7 +82,7 @@ public class Tea_Convo : MonoBehaviour
                 {
                     Debug.Log("다음으로 넘어가기");
                     index = transform.childCount - 1;
-                    StartCoroutine(ChangeScene("MiniGame1"));
+                    StartCoroutine(ChangeScene(next_scene));
                 }
             }
 
