@@ -219,7 +219,7 @@ public class FootPrint : MonoBehaviour
 
     IEnumerator ChangeScene(string sceneName)
     {
-        yield return new WaitForSeconds(1.0f);
+        yield return new WaitForSeconds(2.0f);
 
         // ¾À ÀüÈ¯
         SceneManager.LoadScene(sceneName);

@@ -30,11 +30,10 @@ public class SystemManager : MonoBehaviour
         // 게임 실패
         if (fail_eye_num >= 3)
         {
+            Time.timeScale = 1;
             CancelInvoke("MakeEyes");
             gameover.SetActive(true);
             StartCoroutine(ChangeScene("Title"));
-
-            //Time.timeScale = 0;
         }
     }
 
