@@ -27,11 +27,8 @@ public class LeftHand : MonoBehaviour
 
     void Start()
     {
+        currentAngle = transform.eulerAngles.z;
         InvokeRepeating("WidenRotate", 1f, widenInterval);
-        //if(timeBar == null)
-        //{
-        //    timeBar = GetComponent<TimeBar>();
-        //}
     }
 
     void Update()
@@ -44,56 +41,52 @@ public class LeftHand : MonoBehaviour
                 hasStarted = true;
             }
 
-            transform.Rotate(Vector3.forward * playerAngle);
+            transform.Rotate(-Vector3.forward * playerAngle);
             currentAngle = transform.eulerAngles.z;
-        }
+        }      
 
-        timeLimit -= Time.deltaTime;
-
-        if ((currentAngle>= 180f) && timeLimit>0 && hasStarted == true)
+        if (currentAngle <= 270.0f && timeLimit > 0 && hasStarted == true)
         {
+            // 이김
             inputAllowed = false;
             Pray();
-            //Time.timeScale = 0f;
-            //SceneManager.LoadScene("다음스토리");
-            //StartCoroutine(ChangeScene("Main(2)"));
         }
-        if(timeLimit<=0)
+        if (timeLimit<=0)
         {
             GameManager.instance.SetGameOver();
         }
-        
+        timeLimit -= Time.deltaTime;
+
     }
         
 
 
     void WidenRotate()
     {
-        if (currentAngle < 360f && timeLimit>=0)
+        // 플레이어 입력이 없을 때 손 벌어짐
+        if (currentAngle > 270.0f && currentAngle < 360.0f && timeLimit >= 0)
         {
-            if (currentAngle < 280f)
+            if (currentAngle >= 330.0f && currentAngle + widenAngle[0] < 360.0f)
             {
-                transform.Rotate(-Vector3.forward * widenAngle[0]);
-                currentAngle = transform.eulerAngles.z;
-                
-            }
-            else if (currentAngle < 315f)
-            {
-                transform.Rotate(-Vector3.forward * widenAngle[1]);
-                currentAngle = transform.eulerAngles.z;
-             
-            }
-            else if (currentAngle < 360f)
-            {
-                transform.Rotate(-Vector3.forward * widenAngle[2]);
+                transform.Rotate(Vector3.forward * widenAngle[0]);
                 currentAngle = transform.eulerAngles.z;
             }
+            else if (currentAngle >= 300.0f && currentAngle + widenAngle[0] < 360.0f)
+            {
+                transform.Rotate(Vector3.forward * widenAngle[1]);
+                currentAngle = transform.eulerAngles.z;
+            }
+            else if (currentAngle > 270.0f && currentAngle + widenAngle[0] < 360.0f)
+            {
+                transform.Rotate(Vector3.forward * widenAngle[2]);
+                currentAngle = transform.eulerAngles.z;
+            }
+
         }
     }
     void Pray()
     {
-        transform.position = new Vector3(0f, -1f, 0f);
-        //Time.timeScale = 0f;
+        transform.position = new Vector3(-1.5f, -3f, 0f);
     }
 
     IEnumerator ChangeScene(string sceneName)

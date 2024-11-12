@@ -26,6 +26,7 @@ public class RightHand : MonoBehaviour
 
     void Start()
     {
+        currentAngle = transform.eulerAngles.z;
         InvokeRepeating("WidenRotate", 1f, widenInterval);
     }
 
@@ -33,6 +34,7 @@ public class RightHand : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Space) && inputAllowed)
         {
+            // 플레이어가 입력하면 손 모아짐
             if (!hasStarted)
             {
                 hasStarted = true;
@@ -41,16 +43,14 @@ public class RightHand : MonoBehaviour
             currentAngle = transform.eulerAngles.z;
         }
 
-        if (currentAngle>=180f && timeLimit > 0 && hasStarted == true)
-                {
+        if (currentAngle >= 90.0f && timeLimit > 0 && hasStarted == true)
+        {
             //이김
             inputAllowed = false;
             Pray();
-            //Time.timeScale = 0f;
-            //SceneManager.LoadScene("다음스토리");
             StartCoroutine(ChangeScene(next_scene));
-                }
-        
+        }
+
         if (timeLimit <= 0)
         {
             GameManager.instance.SetGameOver();
@@ -61,19 +61,20 @@ public class RightHand : MonoBehaviour
 
     void WidenRotate()
     {
-        if (currentAngle < 180f && timeLimit>=0)
+        // 플레이어 입력이 없을 때 손 벌어짐
+        if (currentAngle < 90.0f && currentAngle > 0.0f && timeLimit >= 0)
         {
-            if (currentAngle < 100f)
+            if (currentAngle <= 30.0f && currentAngle - widenAngle[0] > 0.0f)
             {
                 transform.Rotate(-Vector3.forward * widenAngle[0]);
                 currentAngle = transform.eulerAngles.z;
             }
-            else if (currentAngle < 135f)
+            else if (currentAngle <= 60.0f && currentAngle - widenAngle[0] > 0.0f)
             {
                 transform.Rotate(-Vector3.forward * widenAngle[1]);
                 currentAngle = transform.eulerAngles.z;
             }
-            else if (currentAngle < 180f)
+            else if (currentAngle < 90.0f && currentAngle - widenAngle[0] > 0.0f)
             {
                 transform.Rotate(-Vector3.forward * widenAngle[2]);
                 currentAngle = transform.eulerAngles.z;
@@ -84,7 +85,7 @@ public class RightHand : MonoBehaviour
     }
     void Pray()
     {
-        transform.position = new Vector3(-1.5f, -1f, 0);
+        transform.position = new Vector3(1.5f, -3f, 0);
     }
 
 
