@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 public class RightHand : MonoBehaviour
 {
-    public float timeLimit = 20f;
+    public float timeLimit = 15f;
     public string next_scene;
 
     private bool hasStarted = false;

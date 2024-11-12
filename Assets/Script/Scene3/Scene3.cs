@@ -67,10 +67,15 @@ public class Scene3 : MonoBehaviour
                             index++;
                         }
                     }
-                    else if (index == change_conv1.transform.childCount)
+                    else if (index == change_conv1.transform.childCount && change_conv1.transform.childCount != 0)
                     {
                         // 마지막 대사 이후 다음 씬
                         change_conv1.transform.GetChild(index - 1).gameObject.SetActive(false);
+                        StartCoroutine(FadeIn());
+                    }
+                    else
+                    {
+                        // 대사가 없는 경우
                         StartCoroutine(FadeIn());
                     }
                 }
@@ -92,10 +97,15 @@ public class Scene3 : MonoBehaviour
                             index++;
                         }
                     }
-                    else if (index == change_conv2.transform.childCount)
+                    else if (index == change_conv2.transform.childCount && change_conv2.transform.childCount != 0)
                     {
                         // 마지막 대사 이후 다음 씬
                         change_conv2.transform.GetChild(index - 1).gameObject.SetActive(false);
+                        StartCoroutine(FadeIn());
+                    }
+                    else
+                    {
+                        // 대사가 없는 경우
                         StartCoroutine(FadeIn());
                     }
                 }

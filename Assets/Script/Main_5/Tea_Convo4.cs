@@ -16,7 +16,9 @@ public class Tea_Convo4 : MonoBehaviour
     bool first = false;
     bool second = false;
     bool third = false;
+
     int choice_num;
+    public string next_scene;
 
     bool face = false;
     private int count = 0;
@@ -25,8 +27,6 @@ public class Tea_Convo4 : MonoBehaviour
     void Start()
     {
         first = true;
-        second = false;
-        third = false;
     }
 
     // Update is called once per frame
@@ -42,13 +42,14 @@ public class Tea_Convo4 : MonoBehaviour
                 if (index >= 6)
                 {
                     choice_panel.SetActive(true);
-                    first = false;
+                    index = 0;
                 }
 
             }
             else if (second)
             {
-                third = true;
+/*                second = false;
+                third = true;*/
             }
             else
             {
@@ -75,7 +76,7 @@ public class Tea_Convo4 : MonoBehaviour
 
                         Debug.Log("다음으로 넘어가기");
                         index = transform.childCount - 1;
-                        StartCoroutine(ChangeScene("Ending"));
+                        StartCoroutine(ChangeScene(next_scene));
                     }
                     else
                     {
@@ -95,7 +96,9 @@ public class Tea_Convo4 : MonoBehaviour
         // 1번 선택
         choice_panel.SetActive(false);
         first = false;
-        second = true;
+        second = false;
+        third = true;
+        index = 6;
     }
 
     public void Choice2()
@@ -104,7 +107,9 @@ public class Tea_Convo4 : MonoBehaviour
         // 2번 선택
         choice_panel.SetActive(false);
         first = false;
-        second = true;
+        second = false;
+        third = true;
+        index = 6;
     }
 
     IEnumerator ChangeScene(string sceneName)

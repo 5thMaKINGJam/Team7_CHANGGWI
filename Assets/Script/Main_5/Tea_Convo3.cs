@@ -16,7 +16,9 @@ public class Tea_Convo3 : MonoBehaviour
     bool first = false;
     bool second = false;
     bool third = false;
+
     int choice_num;
+    public string next_scene;
 
     bool face = false;
     private int count = 0;
@@ -25,8 +27,6 @@ public class Tea_Convo3 : MonoBehaviour
     void Start()
     {
         first = true;
-        second = false;
-        third = false;
     }
 
     // Update is called once per frame
@@ -39,11 +39,9 @@ public class Tea_Convo3 : MonoBehaviour
                 transform.GetChild(index).gameObject.SetActive(true);
                 index++;
 
-                if (index >= 6)
+                if (index >= 1)
                 {
                     choice_panel.SetActive(true);
-                    first = false;
-                    second = true;
                     index = 0;
 
                 }
@@ -57,11 +55,10 @@ public class Tea_Convo3 : MonoBehaviour
                     // 선택지 1번 경우
                     convo1.transform.GetChild(index).gameObject.SetActive(true);
                     index++;
-                    choice_panel.SetActive(false);
 
                     if (index >= convo1.transform.childCount)
                     {
-                        index = 6;
+                        index = 1;
                         second = false;
                         third = true;
                     }
@@ -71,11 +68,10 @@ public class Tea_Convo3 : MonoBehaviour
                     // 선택지 2번 경우
                     convo2.transform.GetChild(index).gameObject.SetActive(true);
                     index++;
-                    choice_panel.SetActive(false);
 
                     if (index >= convo2.transform.childCount)
                     {
-                        index = 6;
+                        index = 1;
                         second = false;
                         third = true;
                     }
@@ -94,6 +90,16 @@ public class Tea_Convo3 : MonoBehaviour
                         {
                             transform.GetChild(i).gameObject.SetActive(false);
                         }
+
+                        for (int i = 0; i < convo1.transform.childCount; i++)
+                        {
+                            convo1.transform.GetChild(i).gameObject.SetActive(false);
+                        }
+
+                        for (int i = 0; i < convo2.transform.childCount; i++)
+                        {
+                            convo2.transform.GetChild(i).gameObject.SetActive(false);
+                        }
                         face = true;
 
                     }
@@ -106,7 +112,7 @@ public class Tea_Convo3 : MonoBehaviour
 
                         Debug.Log("다음으로 넘어가기");
                         index = transform.childCount - 1;
-                        StartCoroutine(ChangeScene("MiniGame1(3)"));
+                        StartCoroutine(ChangeScene(next_scene));
                     }
                     else
                     {
