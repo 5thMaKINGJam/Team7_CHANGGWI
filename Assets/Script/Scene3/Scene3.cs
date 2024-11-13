@@ -151,11 +151,14 @@ public class Scene3 : MonoBehaviour
         background.GetComponent<Image>().color = color;
 
         float time = 0.0f;
-        while (time < 2.0f)
+        float percent = 0.0f;
+
+        while (percent < 1)
         {
             time += Time.deltaTime;
+            percent = time / 2.0f;
 
-            color.a = color.a + 0.001f;
+            color.a = Mathf.Lerp(0.0f, 0.7f, percent);
             background.GetComponent<Image>().color = color;
 
             yield return null;

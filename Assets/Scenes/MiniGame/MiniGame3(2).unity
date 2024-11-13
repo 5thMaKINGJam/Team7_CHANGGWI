@@ -855,7 +855,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 0}
-  timeLimit: 20
+  timeLimit: 15
   TimerUI: {fileID: 0}
 --- !u!1 &1439142263
 GameObject:

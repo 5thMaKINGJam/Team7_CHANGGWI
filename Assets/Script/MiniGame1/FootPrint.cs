@@ -112,15 +112,17 @@ public class FootPrint : MonoBehaviour
                 GameObject new_key = Instantiate(key[key_num], new Vector3(0, 0, 0), Quaternion.identity, new_footprint.transform);
                 new_key.transform.localPosition = new Vector3(0, 1.0f, 0);
 
-                // 3초 동안 키 입력 여부 확인
+                // 일정 시간 동안 키 입력 여부 확인
                 float time = 0.0f;
-                while (time < time_level)
+                float percent = 0.0f;
+                while (percent < 1)
                 {
                     time += Time.deltaTime;
+                    percent = time / time_level;
 
                     // 오브젝트 투명도 낮춤
                     Color color = new_footprint.GetComponent<SpriteRenderer>().color;
-                    color.a = color.a - 0.001f;
+                    color.a = Mathf.Lerp(1.0f, 0.0f, percent);
                     new_footprint.GetComponent<SpriteRenderer>().color = color;
 
                     // 성공

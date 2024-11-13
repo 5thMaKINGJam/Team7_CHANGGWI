@@ -24,18 +24,21 @@ public class Eye : MonoBehaviour
     IEnumerator EyeEvent()
     {
         timer = 0;
+        float percent = 0.0f;
 
         // 2ÃÊ µ¿¾È ´«µ¿ÀÚ Ä¿Áü
-        while(timer < 2.0f && Time.timeScale == 1)
+        while (percent < 1 && Time.timeScale == 1)
         {
             timer += Time.deltaTime;
-            eye_back.transform.localScale = new Vector3(eye_back.transform.localScale.x + 0.001f, eye_back.transform.localScale.y + 0.001f, 0);
+            percent = timer / 2.0f;
+
+            eye_back.transform.localScale = new Vector3(Mathf.Lerp(1.0f, 1.5f, percent), Mathf.Lerp(1.0f, 1.5f, percent), 0);
 
             yield return null;
         }
 
         // ´«µ¿ÀÚ È­¸é °¡¿îµ¥ °©ÅöÆ¢
-        if(timer > 2.0f)
+        if (timer > 2.0f)
         {
             Time.timeScale = 0;
             eye_sound.Play();
