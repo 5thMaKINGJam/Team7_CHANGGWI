@@ -960,5 +960,5 @@ MonoBehaviour:
   - {fileID: 8978636198983260429, guid: 4aea2b1305e326246b05ca2c7bc94780, type: 3}
   - {fileID: 7795439136610982274, guid: fcda1887483f5ec4886520efffb7980d, type: 3}
   gameover: {fileID: 519083620}
-  time_level: 0.9
+  time_level: 1.2
   next_scene: MiniGame2(2)

@@ -855,7 +855,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   timer: {fileID: 0}
-  timeLimit: 20
+  timeLimit: 25
   TimerUI: {fileID: 0}
 --- !u!1 &1439142263
 GameObject:
@@ -1001,7 +1001,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bdea4f4e857cbe241b43d29d96337c05, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLimit: 20
+  timeLimit: 25
   timeBar: {fileID: 0}
   playerAngle: 3
   currentAngle: 0
@@ -1507,7 +1507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d025121c08be063479f90d5c3d56a3f3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  timeLimit: 20
+  timeLimit: 25
   next_scene: Main(2)
   inputAllowed: 1
   playerAngle: 3

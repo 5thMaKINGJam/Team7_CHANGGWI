@@ -47,7 +47,6 @@ public class Eye : MonoBehaviour
             gameObject.GetComponent<SpriteRenderer>().sortingOrder = 2;
             GetComponentInParent<SystemManager>().fail_eye_num++;
         }
-
         yield return new WaitForSecondsRealtime(2.0f);
 
         Time.timeScale = 1;
@@ -57,7 +56,10 @@ public class Eye : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Debug.Log("click");
-        Destroy(this.gameObject);
+        if (Time.timeScale == 1)
+        {
+            Debug.Log("click");
+            Destroy(this.gameObject);
+        }
     }
 }

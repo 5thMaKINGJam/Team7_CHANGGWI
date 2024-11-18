@@ -482,7 +482,7 @@ MonoBehaviour:
   eye: {fileID: 6865466669031232926, guid: 76ac3e43c6f65c04b9de68f042b1cf4e, type: 3}
   time_text: {fileID: 349601666}
   gameover: {fileID: 365059425}
-  make_level: 0.35
+  make_level: 0.5
   next_scene: MiniGame3(3)
   fail_eye_num: 0
 --- !u!82 &772955069
