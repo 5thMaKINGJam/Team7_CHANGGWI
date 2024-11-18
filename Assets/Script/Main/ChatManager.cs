@@ -79,6 +79,16 @@ public class ChatManager : MonoBehaviour
         human.SetActive(true);
         human_txt.text = human_convo_list[human_convo.convoIndex].ToString();
         human_convo.convoIndex++;
+
+        if (scene1)
+        {
+            human.GetComponent<RectTransform>().anchoredPosition = Vector3.zero;
+        }
+        else
+        {
+            // 한 대사 마다 y 위치 60씩 감소
+            human.GetComponent<RectTransform>().anchoredPosition = new Vector3(0, human.GetComponent<RectTransform>().anchoredPosition.y - 60, 0);
+        }
     }
 
 

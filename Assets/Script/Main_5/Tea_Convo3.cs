@@ -10,6 +10,8 @@ public class Tea_Convo3 : MonoBehaviour
     public GameObject convo1;
     public GameObject convo2;
 
+    public GameObject background;
+    public Sprite background_img;
     public GameObject changgwi_face;
 
     public int index = 0;
@@ -108,6 +110,9 @@ public class Tea_Convo3 : MonoBehaviour
                 {
                     if(count > 5)
                     {
+                        // 창툭튀
+                        background.GetComponent<Animator>().enabled = false;
+                        background.GetComponent<UnityEngine.UI.Image>().sprite = background_img;
                         changgwi_face.SetActive(true);
 
                         Debug.Log("다음으로 넘어가기");

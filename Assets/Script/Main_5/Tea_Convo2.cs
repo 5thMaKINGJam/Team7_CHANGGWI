@@ -1,7 +1,9 @@
+using Microsoft.Unity.VisualStudio.Editor;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class Tea_Convo2 : MonoBehaviour
 {
@@ -10,6 +12,8 @@ public class Tea_Convo2 : MonoBehaviour
     public GameObject convo1;
     public GameObject convo2;
 
+    public GameObject background;
+    public Sprite background_img;
     public GameObject changgwi_face;
 
     public int index = 0;
@@ -104,6 +108,9 @@ public class Tea_Convo2 : MonoBehaviour
                 }
                 else
                 {
+                    // 창툭튀
+                    background.GetComponent<Animator>().enabled = false;
+                    background.GetComponent<UnityEngine.UI.Image>().sprite = background_img;
                     changgwi_face.SetActive(true);
 
                     Debug.Log("다음으로 넘어가기");

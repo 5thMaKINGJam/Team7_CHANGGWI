@@ -767,7 +767,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ">\uB4E4\uC5B4\uBCF8 \uC801\uC774 \uC788\uB2E4"
+  m_Text: "> \uB4E4\uC5B4\uBCF8 \uC801\uC774 \uC788\uB2E4."
 --- !u!222 &154671005
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -2807,7 +2807,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: ">\uC758\uC2EC\uD55C\uB2E4"
+  m_Text: "> \uC758\uC2EC\uD55C\uB2E4."
 --- !u!222 &1315934345
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -3140,6 +3140,8 @@ MonoBehaviour:
   choice_panel: {fileID: 1947464465}
   convo1: {fileID: 385098426}
   convo2: {fileID: 1654181702}
+  background: {fileID: 201851963}
+  background_img: {fileID: 21300000, guid: e6a4a437e3777144b84e440042bc9232, type: 3}
   changgwi_face: {fileID: 612090913}
   index: 0
   next_scene: MiniGame1(2)
